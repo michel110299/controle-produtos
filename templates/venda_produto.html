@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% block conteudo %}
+
+
+    
+
+    <form method="POST">
+        {% csrf_token %}
+        <labell>codigo do produto </labell>
+        <input type="text" name="produto_para_vender">
+        <labell>quantidade </labell>
+        <input type="text" name="quantidade_para_vender">
+        <button type="submit">
+            enviar
+        </button>
+
+
+    </form>
+
+
+
+{%endblock conteudo%}

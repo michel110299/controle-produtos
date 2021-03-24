@@ -1,0 +1,69 @@
+{% extends "base.html"%}
+{% block conteudo %}
+
+<main>
+    <div class="row margin20">
+        
+        <div class="col s2 offset-s1 margin20">
+            <a class=" btn waves-effect green darken-5 z-depth-1  " href="{% url 'registrar_produto'%}">
+                <i class="material-icons right">app_registration</i>Cadastrar 
+            </a>
+            <br>
+            <br>
+            <a class=" btn waves-effect green darken-5 z-depth-1 " href="{% url 'venda_produto'%}">
+                <i class="material-icons right">point_of_sale</i>Vendas 
+            </a>
+
+
+        </div>
+        
+        <div class="col s6 offset-s1">
+            <table class="responsive-table green lighten-5  z-depth-5 highlight" >
+                <thead>
+                    <tr>
+                        <th>
+                            Codigo do produto
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Quantidade
+                        </th>
+                        <th>
+                            Valor
+                        </th>
+                        <th>
+                            validade 
+                        </th>
+                    </tr>
+                </thead>
+        
+                <tbody >
+                    {%for p in todos_produtos%}
+                        <tr>
+                            <th>
+                                {{p.codigo_produto}}
+                            </th>
+                            <th>
+                                {{p.nome_produto}}
+                            </th>
+                            <th>
+                                {{p.quantidade_produto}}
+                            </th>
+                            <th>
+                                R$ {{p.valor_por_kilo}}
+                            </th>
+                            <th>
+                               {{p.validade_produto}}
+                            </th>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+</main>
+{%endblock conteudo%}
